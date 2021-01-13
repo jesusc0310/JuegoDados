@@ -31,7 +31,7 @@ namespace JuegoDados
 
         public void Sonido(string NombreSonido)
         {
-            Stream sonido = (Stream)Properties.Resources.ResourceManager.GetObject(NombreSonido);
+            Stream sonido = (Stream) Properties.Resources.ResourceManager.GetObject(NombreSonido);
             SoundPlayer SonidoCargado = new SoundPlayer(sonido);
             SonidoCargado.Play();
         }
@@ -48,14 +48,14 @@ namespace JuegoDados
             btnTirar.Visible = true;
             btnParar.Visible = false;
             int dado = rnd.Next(1, 7);
-            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado.ToString());
+            pictureBox1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Random rnd = new Random();
             int dado = rnd.Next(1, 7);
-            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado.ToString());
+            pictureBox1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
         }
     }
 }
