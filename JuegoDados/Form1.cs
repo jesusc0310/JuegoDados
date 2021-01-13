@@ -7,7 +7,9 @@ using System.Windows.Forms;
 namespace JuegoDados
 {
     public partial class Form1 : Form
-    {
+    { 
+        private int dado1;
+        private int dado2;
         public Form1()
         {
             InitializeComponent();
@@ -17,15 +19,24 @@ namespace JuegoDados
         {
             timer1.Enabled = true;
             timer1.Start();
-            btnTirar.Visible = false;
-            btnParar.Visible = true;
+            btnTirar1.Visible = false;
+            btnParar1.Visible = true;
+        }
+
+        private void btnTirar2_Click(object sender, EventArgs e)
+        {
+            timer2.Enabled = true;
+            timer2.Start();
+            btnTirar2.Visible = false;
+            btnParar2.Visible = true;
         }
 
         public void IniciarJuego()
         {
-            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
-            btnTirar.Visible = true;
-            btnParar.Visible = false;
+            fotoDado1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
+            btnTirar1.Visible = true;
+            btnParar1.Visible = false;
+            winner.Visible = false;
             Sonido("readygo");
         }
 
@@ -45,17 +56,59 @@ namespace JuegoDados
         {
             Random rnd = new Random();
             timer1.Stop();
-            btnTirar.Visible = true;
-            btnParar.Visible = false;
-            int dado = rnd.Next(1, 7);
-            pictureBox1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
+            dado1 = rnd.Next(1, 7);
+            fotoDado1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado1.ToString());
+            btnParar1.Enabled = false;
+
+            if (!btnParar2.Enabled)
+            {
+                averigua_ganador();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Random rnd = new Random();
             int dado = rnd.Next(1, 7);
-            pictureBox1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
+            fotoDado1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int dado = rnd.Next(1, 7);
+            fotoDado2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado.ToString());
+        }
+
+        private void averigua_ganador()
+        {
+            if (dado1 > dado2)
+            {
+                winner.Text = "Jugador 1";
+            } else if (dado2 > dado1)
+            {
+                winner.Text = "Jugador 2";
+            } else
+            {
+                winner.Text = "Empate";
+            }
+
+            winner.Visible = true;
+
+        }
+
+        private void btnParar2_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            timer2.Stop();
+            dado2 = rnd.Next(1, 7);
+            fotoDado2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado2.ToString());
+            btnParar2.Enabled = false;
+
+            if (!btnParar1.Enabled)
+            {
+                averigua_ganador();
+            }
         }
     }
 }
