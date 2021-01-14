@@ -7,7 +7,10 @@ using System.Windows.Forms;
 namespace JuegoDados
 {
     public partial class Form1 : Form
-    { 
+    {
+
+        private int winned1;
+        private int winned2;
         private int dado1;
         private int dado2;
         public Form1()
@@ -34,15 +37,31 @@ namespace JuegoDados
         public void IniciarJuego()
         {
             fotoDado1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
+            fotoDado2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
             btnTirar1.Visible = true;
             btnParar1.Visible = false;
-            winner.Visible = false;
+            btnParar1.Enabled = true;
+
+            btnTirar2.Visible = true;
+            btnParar2.Visible = false;
+            btnParar2.Enabled = true;
+
+            btnPlayAgain.Enabled = false;
+            btnPlayAgain.Visible = false;
+            
+            btnReset.Enabled = false;
+            btnReset.Visible = false;
+            
+            winned1 = 0;
+            winned2 = 0;
+            winner1.Text = "0";
+            winner2.Text = "0";
             Sonido("readygo");
         }
 
         public void Sonido(string NombreSonido)
         {
-            Stream sonido = (Stream) Properties.Resources.ResourceManager.GetObject(NombreSonido);
+            Stream sonido = (Stream)Properties.Resources.ResourceManager.GetObject(NombreSonido);
             SoundPlayer SonidoCargado = new SoundPlayer(sonido);
             SonidoCargado.Play();
         }
@@ -57,7 +76,7 @@ namespace JuegoDados
             Random rnd = new Random();
             timer1.Stop();
             dado1 = rnd.Next(1, 7);
-            fotoDado1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado1.ToString());
+            fotoDado1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado1.ToString());
             btnParar1.Enabled = false;
 
             if (!btnParar2.Enabled)
@@ -70,7 +89,7 @@ namespace JuegoDados
         {
             Random rnd = new Random();
             int dado = rnd.Next(1, 7);
-            fotoDado1.Image = (Bitmap) Properties.Resources.ResourceManager.GetObject(dado.ToString());
+            fotoDado1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(dado.ToString());
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -84,17 +103,19 @@ namespace JuegoDados
         {
             if (dado1 > dado2)
             {
-                winner.Text = "Jugador 1";
-            } else if (dado2 > dado1)
+                winned1++;
+                winner1.Text = winned1.ToString();
+            }
+            else if (dado2 > dado1)
             {
-                winner.Text = "Jugador 2";
-            } else
-            {
-                winner.Text = "Empate";
+                winned2++;
+                winner2.Text = winned2.ToString();
             }
 
-            winner.Visible = true;
-
+            btnPlayAgain.Visible = true;
+            btnPlayAgain.Enabled = true;
+            btnReset.Visible = true;
+            btnReset.Enabled = true;
         }
 
         private void btnParar2_Click(object sender, EventArgs e)
@@ -109,6 +130,28 @@ namespace JuegoDados
             {
                 averigua_ganador();
             }
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            btnTirar1.Visible = true;
+            btnParar1.Visible = false;
+            btnParar1.Enabled = true;
+
+            btnTirar2.Visible = true;
+            btnParar2.Visible = false;
+            btnParar2.Enabled = true;
+
+            btnReset.Visible = false;
+            btnReset.Enabled = false;
+
+            btnPlayAgain.Visible = false;
+            btnPlayAgain.Enabled = false;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            IniciarJuego();
         }
     }
 }
