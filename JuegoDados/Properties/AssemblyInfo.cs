@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("JuegoDados")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Juego de dados")]
+[assembly: AssemblyDescription("Un simple juego de dados usado para aprender a usar C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("JuegoDados")]
+[assembly: AssemblyProduct("Juego de dados")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
