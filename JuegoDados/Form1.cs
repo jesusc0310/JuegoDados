@@ -177,6 +177,8 @@ namespace JuegoDados
 
             btnSalir.Enabled = false;
             btnSalir.Visible = false;
+
+            lblWin.Visible = false;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
