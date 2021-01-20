@@ -38,6 +38,7 @@ namespace JuegoDados
         {
             fotoDado1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
             fotoDado2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject(1.ToString());
+
             btnTirar1.Visible = true;
             btnParar1.Visible = false;
             btnParar1.Enabled = true;
@@ -48,10 +49,19 @@ namespace JuegoDados
 
             btnPlayAgain.Enabled = false;
             btnPlayAgain.Visible = false;
-            
+
             btnReset.Enabled = false;
             btnReset.Visible = false;
-            
+
+            btnSalir.Enabled = false;
+            btnSalir.Visible = false;
+
+            lblWin.Visible = false;
+
+            fotoJugador1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Cliente12");
+            fotoJugador2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Cliente9");
+            fotoGanador.Image = null;
+
             winned1 = 0;
             winned2 = 0;
             winner1.Text = "0";
@@ -105,17 +115,32 @@ namespace JuegoDados
             {
                 winned1++;
                 winner1.Text = winned1.ToString();
+                fotoGanador.Image = fotoJugador1.Image;
+                lblWin.Text = lblJ1.Text;
             }
             else if (dado2 > dado1)
             {
                 winned2++;
                 winner2.Text = winned2.ToString();
+                fotoGanador.Image = fotoJugador2.Image;
+                lblWin.Text = lblJ2.Text;
+            }
+            else
+            {
+                fotoGanador.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Empate");
+                lblWin.Text = "Empate";
             }
 
-            btnPlayAgain.Visible = true;
+            lblWin.Visible = true;
+
             btnPlayAgain.Enabled = true;
-            btnReset.Visible = true;
+            btnPlayAgain.Visible = true;
+
             btnReset.Enabled = true;
+            btnReset.Visible = true;
+
+            btnSalir.Enabled = true;
+            btnSalir.Visible = true;
         }
 
         private void btnParar2_Click(object sender, EventArgs e)
@@ -134,6 +159,8 @@ namespace JuegoDados
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
+            fotoGanador.Image = null;
+
             btnTirar1.Visible = true;
             btnParar1.Visible = false;
             btnParar1.Enabled = true;
@@ -147,11 +174,19 @@ namespace JuegoDados
 
             btnPlayAgain.Visible = false;
             btnPlayAgain.Enabled = false;
+
+            btnSalir.Enabled = false;
+            btnSalir.Visible = false;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             IniciarJuego();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

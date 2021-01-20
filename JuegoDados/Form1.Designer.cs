@@ -48,13 +48,19 @@ namespace JuegoDados
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.fotoDado2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblJ1 = new System.Windows.Forms.Label();
+            this.lblJ2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.winner1 = new System.Windows.Forms.Label();
             this.winner2 = new System.Windows.Forms.Label();
             this.btnPlayAgain = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.fotoJugador2 = new System.Windows.Forms.PictureBox();
+            this.fotoJugador1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fotoGanador = new System.Windows.Forms.PictureBox();
+            this.lblWin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fotoDado1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,6 +71,9 @@ namespace JuegoDados
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoDado2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoJugador2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoJugador1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoGanador)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -80,7 +89,7 @@ namespace JuegoDados
             this.fotoDado1.BackColor = System.Drawing.Color.Transparent;
             this.fotoDado1.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.fotoDado1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fotoDado1.Location = new System.Drawing.Point(132, 292);
+            this.fotoDado1.Location = new System.Drawing.Point(132, 417);
             this.fotoDado1.Name = "fotoDado1";
             this.fotoDado1.Size = new System.Drawing.Size(104, 104);
             this.fotoDado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +102,7 @@ namespace JuegoDados
             this.pictureBox2.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = global::JuegoDados.Properties.Resources._3;
-            this.pictureBox2.Location = new System.Drawing.Point(229, 421);
+            this.pictureBox2.Location = new System.Drawing.Point(229, 546);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(0, 0);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +115,7 @@ namespace JuegoDados
             this.pictureBox3.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Image = global::JuegoDados.Properties.Resources._2;
-            this.pictureBox3.Location = new System.Drawing.Point(271, 292);
+            this.pictureBox3.Location = new System.Drawing.Point(271, 417);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(0, 0);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,7 +127,7 @@ namespace JuegoDados
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(263, 497);
+            this.pictureBox4.Location = new System.Drawing.Point(263, 622);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(0, 0);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +151,7 @@ namespace JuegoDados
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(502, 358);
+            this.pictureBox6.Location = new System.Drawing.Point(502, 483);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(0, 0);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -166,7 +175,7 @@ namespace JuegoDados
             this.btnTirar1.BackColor = System.Drawing.Color.Transparent;
             this.btnTirar1.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnTirar1.ForeColor = System.Drawing.Color.Blue;
-            this.btnTirar1.Location = new System.Drawing.Point(116, 442);
+            this.btnTirar1.Location = new System.Drawing.Point(116, 567);
             this.btnTirar1.Name = "btnTirar1";
             this.btnTirar1.Size = new System.Drawing.Size(130, 66);
             this.btnTirar1.TabIndex = 8;
@@ -179,7 +188,7 @@ namespace JuegoDados
             this.btnParar1.BackColor = System.Drawing.Color.Transparent;
             this.btnParar1.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnParar1.ForeColor = System.Drawing.Color.Blue;
-            this.btnParar1.Location = new System.Drawing.Point(116, 442);
+            this.btnParar1.Location = new System.Drawing.Point(116, 567);
             this.btnParar1.Name = "btnParar1";
             this.btnParar1.Size = new System.Drawing.Size(130, 66);
             this.btnParar1.TabIndex = 9;
@@ -197,7 +206,7 @@ namespace JuegoDados
             this.btnParar2.BackColor = System.Drawing.Color.Transparent;
             this.btnParar2.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnParar2.ForeColor = System.Drawing.Color.Blue;
-            this.btnParar2.Location = new System.Drawing.Point(382, 442);
+            this.btnParar2.Location = new System.Drawing.Point(382, 567);
             this.btnParar2.Name = "btnParar2";
             this.btnParar2.Size = new System.Drawing.Size(130, 66);
             this.btnParar2.TabIndex = 15;
@@ -211,7 +220,7 @@ namespace JuegoDados
             this.btnTirar2.BackColor = System.Drawing.Color.Transparent;
             this.btnTirar2.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnTirar2.ForeColor = System.Drawing.Color.Blue;
-            this.btnTirar2.Location = new System.Drawing.Point(382, 442);
+            this.btnTirar2.Location = new System.Drawing.Point(382, 567);
             this.btnTirar2.Name = "btnTirar2";
             this.btnTirar2.Size = new System.Drawing.Size(130, 66);
             this.btnTirar2.TabIndex = 14;
@@ -224,7 +233,7 @@ namespace JuegoDados
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(502, 497);
+            this.pictureBox7.Location = new System.Drawing.Point(502, 622);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(0, 0);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +246,7 @@ namespace JuegoDados
             this.pictureBox8.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Image = global::JuegoDados.Properties.Resources._2;
-            this.pictureBox8.Location = new System.Drawing.Point(510, 292);
+            this.pictureBox8.Location = new System.Drawing.Point(510, 417);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(0, 0);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +259,7 @@ namespace JuegoDados
             this.pictureBox9.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox9.Image = global::JuegoDados.Properties.Resources._3;
-            this.pictureBox9.Location = new System.Drawing.Point(495, 421);
+            this.pictureBox9.Location = new System.Drawing.Point(495, 546);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(0, 0);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,36 +271,36 @@ namespace JuegoDados
             this.fotoDado2.BackColor = System.Drawing.Color.Transparent;
             this.fotoDado2.BackgroundImage = global::JuegoDados.Properties.Resources._1;
             this.fotoDado2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fotoDado2.Location = new System.Drawing.Point(398, 292);
+            this.fotoDado2.Location = new System.Drawing.Point(398, 417);
             this.fotoDado2.Name = "fotoDado2";
             this.fotoDado2.Size = new System.Drawing.Size(104, 104);
             this.fotoDado2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fotoDado2.TabIndex = 10;
             this.fotoDado2.TabStop = false;
             // 
-            // label2
+            // lblJ1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe Script", 25.8F);
-            this.label2.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Location = new System.Drawing.Point(56, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 68);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Jugador 1";
+            this.lblJ1.AutoSize = true;
+            this.lblJ1.BackColor = System.Drawing.Color.Transparent;
+            this.lblJ1.Font = new System.Drawing.Font("Segoe Script", 25.8F);
+            this.lblJ1.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblJ1.Location = new System.Drawing.Point(56, 105);
+            this.lblJ1.Name = "lblJ1";
+            this.lblJ1.Size = new System.Drawing.Size(263, 68);
+            this.lblJ1.TabIndex = 16;
+            this.lblJ1.Text = "Jugador 1";
             // 
-            // label3
+            // lblJ2
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe Script", 25.8F);
-            this.label3.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label3.Location = new System.Drawing.Point(325, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 68);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Jugador 2";
+            this.lblJ2.AutoSize = true;
+            this.lblJ2.BackColor = System.Drawing.Color.Transparent;
+            this.lblJ2.Font = new System.Drawing.Font("Segoe Script", 25.8F);
+            this.lblJ2.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lblJ2.Location = new System.Drawing.Point(325, 105);
+            this.lblJ2.Name = "lblJ2";
+            this.lblJ2.Size = new System.Drawing.Size(263, 68);
+            this.lblJ2.TabIndex = 17;
+            this.lblJ2.Text = "Jugador 2";
             // 
             // timer2
             // 
@@ -303,7 +312,7 @@ namespace JuegoDados
             this.winner1.BackColor = System.Drawing.Color.Transparent;
             this.winner1.Font = new System.Drawing.Font("Segoe Script", 25.8F);
             this.winner1.ForeColor = System.Drawing.Color.Red;
-            this.winner1.Location = new System.Drawing.Point(150, 173);
+            this.winner1.Location = new System.Drawing.Point(259, 245);
             this.winner1.Name = "winner1";
             this.winner1.Size = new System.Drawing.Size(60, 68);
             this.winner1.TabIndex = 18;
@@ -315,7 +324,7 @@ namespace JuegoDados
             this.winner2.BackColor = System.Drawing.Color.Transparent;
             this.winner2.Font = new System.Drawing.Font("Segoe Script", 25.8F);
             this.winner2.ForeColor = System.Drawing.Color.Red;
-            this.winner2.Location = new System.Drawing.Point(421, 173);
+            this.winner2.Location = new System.Drawing.Point(528, 245);
             this.winner2.Name = "winner2";
             this.winner2.Size = new System.Drawing.Size(60, 68);
             this.winner2.TabIndex = 19;
@@ -327,7 +336,7 @@ namespace JuegoDados
             this.btnPlayAgain.Enabled = false;
             this.btnPlayAgain.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnPlayAgain.ForeColor = System.Drawing.Color.Blue;
-            this.btnPlayAgain.Location = new System.Drawing.Point(162, 527);
+            this.btnPlayAgain.Location = new System.Drawing.Point(162, 652);
             this.btnPlayAgain.Name = "btnPlayAgain";
             this.btnPlayAgain.Size = new System.Drawing.Size(302, 66);
             this.btnPlayAgain.TabIndex = 20;
@@ -342,7 +351,7 @@ namespace JuegoDados
             this.btnReset.Enabled = false;
             this.btnReset.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnReset.ForeColor = System.Drawing.Color.Blue;
-            this.btnReset.Location = new System.Drawing.Point(162, 612);
+            this.btnReset.Location = new System.Drawing.Point(162, 737);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(302, 66);
             this.btnReset.TabIndex = 21;
@@ -351,19 +360,102 @@ namespace JuegoDados
             this.btnReset.Visible = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Enabled = false;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.Blue;
+            this.btnSalir.Location = new System.Drawing.Point(567, 737);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(302, 66);
+            this.btnSalir.TabIndex = 22;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Visible = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // fotoJugador2
+            // 
+            this.fotoJugador2.BackColor = System.Drawing.Color.Transparent;
+            this.fotoJugador2.Image = global::JuegoDados.Properties.Resources.Cliente9;
+            this.fotoJugador2.InitialImage = global::JuegoDados.Properties.Resources.Cliente9;
+            this.fotoJugador2.Location = new System.Drawing.Point(394, 218);
+            this.fotoJugador2.Name = "fotoJugador2";
+            this.fotoJugador2.Size = new System.Drawing.Size(125, 125);
+            this.fotoJugador2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoJugador2.TabIndex = 23;
+            this.fotoJugador2.TabStop = false;
+            // 
+            // fotoJugador1
+            // 
+            this.fotoJugador1.BackColor = System.Drawing.Color.Transparent;
+            this.fotoJugador1.Image = global::JuegoDados.Properties.Resources.Cliente12;
+            this.fotoJugador1.InitialImage = global::JuegoDados.Properties.Resources.Cliente12;
+            this.fotoJugador1.Location = new System.Drawing.Point(128, 218);
+            this.fotoJugador1.Name = "fotoJugador1";
+            this.fotoJugador1.Size = new System.Drawing.Size(125, 125);
+            this.fotoJugador1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoJugador1.TabIndex = 24;
+            this.fotoJugador1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe Script", 25.8F);
+            this.label4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label4.Location = new System.Drawing.Point(585, 382);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(284, 68);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "GANADOR";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fotoGanador
+            // 
+            this.fotoGanador.BackColor = System.Drawing.Color.Transparent;
+            this.fotoGanador.InitialImage = global::JuegoDados.Properties.Resources.Empate;
+            this.fotoGanador.Location = new System.Drawing.Point(659, 463);
+            this.fotoGanador.Name = "fotoGanador";
+            this.fotoGanador.Size = new System.Drawing.Size(125, 125);
+            this.fotoGanador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoGanador.TabIndex = 26;
+            this.fotoGanador.TabStop = false;
+            // 
+            // lblWin
+            // 
+            this.lblWin.AutoSize = true;
+            this.lblWin.BackColor = System.Drawing.Color.Transparent;
+            this.lblWin.Font = new System.Drawing.Font("Segoe Script", 25.8F);
+            this.lblWin.ForeColor = System.Drawing.Color.Turquoise;
+            this.lblWin.Location = new System.Drawing.Point(585, 591);
+            this.lblWin.Name = "lblWin";
+            this.lblWin.Size = new System.Drawing.Size(253, 85);
+            this.lblWin.TabIndex = 27;
+            this.lblWin.Text = "Empate";
+            this.lblWin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWin.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(632, 703);
+            this.ClientSize = new System.Drawing.Size(919, 847);
+            this.Controls.Add(this.lblWin);
+            this.Controls.Add(this.fotoGanador);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.fotoJugador1);
+            this.Controls.Add(this.fotoJugador2);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.winner2);
             this.Controls.Add(this.winner1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblJ2);
+            this.Controls.Add(this.lblJ1);
             this.Controls.Add(this.btnParar2);
             this.Controls.Add(this.btnTirar2);
             this.Controls.Add(this.pictureBox7);
@@ -397,6 +489,9 @@ namespace JuegoDados
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoDado2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoJugador2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoJugador1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoGanador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,13 +516,19 @@ namespace JuegoDados
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox fotoDado2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblJ1;
+        private System.Windows.Forms.Label lblJ2;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label winner1;
         private System.Windows.Forms.Label winner2;
         private System.Windows.Forms.Button btnPlayAgain;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox fotoJugador2;
+        private System.Windows.Forms.PictureBox fotoJugador1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox fotoGanador;
+        private System.Windows.Forms.Label lblWin;
     }
 }
 
